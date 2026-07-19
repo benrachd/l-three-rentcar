@@ -1710,6 +1710,8 @@
                 'fleet.suv': 'SUV Luxury',
                 'fleet.price_unit': 'DH / jour',
                 'fleet.price_on_request': 'Sur demande',
+                'fleet.price_from_249': 'À partir de 249 DH / jour',
+                'fleet.price_from_300': 'À partir de 300 DH / jour',
                 'fleet.spec_on_request': 'Informations sur demande',
                 'fleet.spec_label.manual': 'Manuelle',
                 'fleet.spec_label.automatic': 'Automatique',
@@ -1863,6 +1865,8 @@
                 'fleet.suv': 'SUV Luxury',
                 'fleet.price_unit': 'DH / day',
                 'fleet.price_on_request': 'On request',
+                'fleet.price_from_249': 'From 249 DH / day',
+                'fleet.price_from_300': 'From 300 DH / day',
                 'fleet.spec_on_request': 'Information on request',
                 'fleet.spec_label.manual': 'Manual',
                 'fleet.spec_label.automatic': 'Automatic',
@@ -2016,6 +2020,8 @@
                 'fleet.suv': 'SUV فاخرة',
                 'fleet.price_unit': 'درهم / يوم',
                 'fleet.price_on_request': 'حسب الطلب',
+                'fleet.price_from_249': 'ابتداءً من 249 درهم / يوم',
+                'fleet.price_from_300': 'ابتداءً من 300 درهم / يوم',
                 'fleet.spec_on_request': 'المعلومات متوفرة عند الطلب',
                 'fleet.spec_label.manual': 'يدوي',
                 'fleet.spec_label.automatic': 'أوتوماتيك',
@@ -2128,6 +2134,7 @@
             {
                 carKey: 'fleet.car_clio5',
                 transmission: 'manual',
+                priceKey: 'fleet.price_from_249',
                 altKey: 'meta.alt.clio5',
                 image: 'images/Renault%20Clio%205.jpg',
                 badgeKey: 'fleet.popular',
@@ -2137,6 +2144,7 @@
             {
                 carKey: 'fleet.car_sandero',
                 transmission: 'manual',
+                priceKey: 'fleet.price_from_300',
                 altKey: 'meta.alt.sandero',
                 image: 'images/Dacia%20Sandero.jpg',
                 badgeKey: 'fleet.economy',
@@ -2146,6 +2154,7 @@
             {
                 carKey: 'fleet.car_streetway',
                 transmission: 'auto',
+                priceKey: 'fleet.price_from_300',
                 altKey: 'meta.alt.streetway',
                 image: 'images/Dacia%20Streetway.jpg',
                 badgeKey: 'fleet.economy',
@@ -2155,6 +2164,7 @@
             {
                 carKey: 'fleet.car_peugeot208',
                 transmission: 'manual',
+                priceKey: 'fleet.price_from_249',
                 altKey: 'meta.alt.peugeot208',
                 image: 'images/Peugeot%20208%20Style.jpg',
                 badgeKey: 'fleet.popular',
@@ -2164,6 +2174,7 @@
             {
                 carKey: 'fleet.car_opel_corsa',
                 transmission: 'manual',
+                priceKey: 'fleet.price_from_300',
                 altKey: 'meta.alt.opel_corsa',
                 image: 'images/Opel%20Corsa.jpg',
                 badgeKey: 'fleet.popular',
@@ -2173,6 +2184,7 @@
             {
                 carKey: 'fleet.car_skoda',
                 transmission: 'auto',
+                priceKey: 'fleet.price_from_300',
                 altKey: 'meta.alt.skoda',
                 image: 'images/Skoda.jpg',
                 badgeKey: 'fleet.suv',
@@ -2226,7 +2238,7 @@
                                     '<h3 class="text-xl font-bold mt-3" data-i18n="' + car.carKey + '"></h3>' +
                                 '</div>' +
                                 '<div class="text-right shrink-0">' +
-                                    '<p class="text-2xl font-black text-amber-500" data-i18n="fleet.price_on_request"></p>' +
+                                    '<p class="text-2xl font-black text-amber-500" data-i18n="' + car.priceKey + '"></p>' +
                                 '</div>' +
                             '</div>' +
                             renderFleetSpecGrid(car.transmission) +
