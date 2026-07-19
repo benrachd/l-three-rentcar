@@ -555,6 +555,86 @@
             justify-content: center;
         }
 
+        .reserve-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .reserve-modal.is-open {
+            display: flex;
+        }
+        .reserve-modal__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.72);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .reserve-modal__dialog {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 22rem;
+            padding: 1.25rem 1.25rem 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+            transform: translateY(8px) scale(0.98);
+            opacity: 0;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+        .reserve-modal.is-open .reserve-modal__dialog {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        .reserve-modal__close {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            color: #94a3b8;
+            background: rgba(51, 65, 85, 0.35);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            font-size: 1.125rem;
+            line-height: 1;
+            transition: color 0.2s ease, background 0.2s ease;
+        }
+        .reserve-modal__close:hover {
+            color: #fbbf24;
+            background: rgba(245, 158, 11, 0.12);
+        }
+        [dir="rtl"] .reserve-modal__close {
+            right: auto;
+            left: 0.75rem;
+        }
+        .reserve-modal__title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            padding-right: 2rem;
+        }
+        [dir="rtl"] .reserve-modal__title {
+            padding-right: 0;
+            padding-left: 2rem;
+        }
+        .reserve-modal__car {
+            margin-top: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #f59e0b;
+        }
+        .reserve-modal__form {
+            margin-top: 1.25rem;
+        }
+
         #mobile-menu { transition: max-height 0.3s ease, opacity 0.3s ease; }
 
         .stars { color: #f59e0b; letter-spacing: 0.05em; }
@@ -1654,6 +1734,37 @@
         </div>
     </footer>
 
+    <!-- Fleet reserve modal -->
+    <div id="reserve-modal" class="reserve-modal" aria-hidden="true">
+        <div class="reserve-modal__backdrop" data-reserve-close></div>
+        <div class="reserve-modal__dialog glass-card" role="dialog" aria-modal="true" aria-labelledby="reserve-modal-title">
+            <button type="button" class="reserve-modal__close" data-reserve-close data-i18n-aria="aria.close" aria-label="Fermer">&times;</button>
+            <h3 id="reserve-modal-title" class="reserve-modal__title" data-i18n="fleet.modal.title">Réserver</h3>
+            <p id="reserve-modal-car" class="reserve-modal__car"></p>
+            <form id="reserve-modal-form" class="reserve-modal__form space-y-4">
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label for="reserve-date-start" class="booking-field-label" data-i18n="form.date_start">Date de début</label>
+                        <div class="booking-field">
+                            <svg class="booking-field-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <input type="date" id="reserve-date-start" name="reserve-date-start" required data-i18n-aria="form.date_start" aria-label="Date de début">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="reserve-date-end" class="booking-field-label" data-i18n="form.date_end">Date de fin</label>
+                        <div class="booking-field">
+                            <svg class="booking-field-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <input type="date" id="reserve-date-end" name="reserve-date-end" required data-i18n-aria="form.date_end" aria-label="Date de fin">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="booking-submit wa-btn w-full py-3 rounded-lg text-sm flex items-center justify-center gap-2">
+                    <span data-i18n="fleet.modal.continue">Continuer</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- WhatsApp floating -->
     <a href="https://wa.me/212668336781" data-wa-prefill="wa.prefill_rent" class="wa-float wa-btn fixed bottom-6 right-6 w-14 h-14 rounded-full flex items-center justify-center z-50 hover:scale-110" data-i18n-aria="aria.whatsapp" aria-label="WhatsApp">
         <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.92.92l4.458-1.495A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.79 9.79 0 01-4.99-1.364l-.357-.212-2.645.887.887-2.58-.233-.374A9.818 9.818 0 1121.818 12 9.83 9.83 0 0112 21.818z"/></svg>
@@ -1722,6 +1833,8 @@
                 'fleet.spec_label.ac': 'Climatisation',
                 'fleet.spec_sandero2': '⚙️ Automatique',
                 'fleet.book': 'Réserver',
+                'fleet.modal.title': 'Réserver',
+                'fleet.modal.continue': 'Continuer',
                 'fleet.car_clio5': 'Renault Clio 5',
                 'fleet.car_sandero': 'Dacia Sandero',
                 'fleet.car_sandero2': 'Dacia Sandero Stepway Automatique',
@@ -1805,6 +1918,7 @@
                 'aria.instagram': 'Instagram',
                 'aria.facebook': 'Facebook',
                 'aria.logo': 'L.THREE RENTCAR',
+                'aria.close': 'Fermer',
                 'wa.prefill_rent': 'Bonjour, je souhaite louer une voiture à Fès.',
                 'wa.prefill_fleet': 'Bonjour, je souhaite voir toute votre flotte disponible.',
                 'wa.msg.greeting': 'Bonjour 👋',
@@ -1878,6 +1992,8 @@
                 'fleet.spec_label.ac': 'Air conditioning',
                 'fleet.spec_sandero2': '⚙️ Automatic',
                 'fleet.book': 'Book now',
+                'fleet.modal.title': 'Book',
+                'fleet.modal.continue': 'Continue',
                 'fleet.car_clio5': 'Renault Clio 5',
                 'fleet.car_sandero': 'Dacia Sandero',
                 'fleet.car_sandero2': 'Dacia Sandero Stepway Automatique',
@@ -1961,6 +2077,7 @@
                 'aria.instagram': 'Instagram',
                 'aria.facebook': 'Facebook',
                 'aria.logo': 'L.THREE RENTCAR',
+                'aria.close': 'Close',
                 'wa.prefill_rent': 'Hello, I would like to rent a car in Fez.',
                 'wa.prefill_fleet': 'Hello, I would like to see your full available fleet.',
                 'wa.msg.greeting': 'Hello 👋',
@@ -2034,6 +2151,8 @@
                 'fleet.spec_label.ac': 'تكييف',
                 'fleet.spec_sandero2': '⚙️ أوتوماتيك',
                 'fleet.book': 'احجز',
+                'fleet.modal.title': 'احجز',
+                'fleet.modal.continue': 'متابعة',
                 'fleet.car_clio5': 'Renault Clio 5',
                 'fleet.car_sandero': 'Dacia Sandero',
                 'fleet.car_sandero2': 'Dacia Sandero Stepway Automatique',
@@ -2117,6 +2236,7 @@
                 'aria.instagram': 'إنستغرام',
                 'aria.facebook': 'فيسبوك',
                 'aria.logo': 'L.THREE RENTCAR',
+                'aria.close': 'إغلاق',
                 'wa.prefill_rent': 'مرحباً، أود استئجار سيارة في فاس.',
                 'wa.prefill_fleet': 'مرحباً، أود الاطلاع على أسطولكم المتاح بالكامل.',
                 'wa.msg.greeting': 'مرحباً 👋',
@@ -2486,25 +2606,92 @@
             window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(buildWhatsAppMessage(options)), '_blank');
         }
 
-        document.getElementById('fleet-grid').addEventListener('click', function (e) {
-            const btn = e.target.closest('.wa-reserve-btn');
-            if (!btn) return;
-            e.preventDefault();
-            const lieuKey = document.getElementById('lieu').value;
-            const debut = document.getElementById('date-debut').value;
-            const fin = document.getElementById('date-fin').value;
+        let reserveModalCarKey = '';
 
-            if (debut && fin && fin < debut) {
+        function getTodayISO() {
+            const now = new Date();
+            const offset = now.getTimezoneOffset();
+            return new Date(now.getTime() - offset * 60000).toISOString().split('T')[0];
+        }
+
+        function openReserveModal(carKey) {
+            const modal = document.getElementById('reserve-modal');
+            const carEl = document.getElementById('reserve-modal-car');
+            const startInput = document.getElementById('reserve-date-start');
+            const endInput = document.getElementById('reserve-date-end');
+            if (!modal || !carEl || !startInput || !endInput) return;
+
+            reserveModalCarKey = carKey || '';
+            carEl.dataset.i18n = carKey;
+            carEl.textContent = carKey ? t(carKey) : '';
+
+            const today = getTodayISO();
+            const heroStart = document.getElementById('date-debut');
+            const heroEnd = document.getElementById('date-fin');
+            const startValue = (heroStart && heroStart.value) ? heroStart.value : today;
+            const endValue = (heroEnd && heroEnd.value && heroEnd.value >= startValue) ? heroEnd.value : startValue;
+
+            startInput.min = today;
+            endInput.min = startValue;
+            startInput.value = startValue;
+            endInput.value = endValue;
+
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            startInput.focus();
+        }
+
+        function closeReserveModal() {
+            const modal = document.getElementById('reserve-modal');
+            if (!modal) return;
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            reserveModalCarKey = '';
+        }
+
+        document.getElementById('reserve-modal').addEventListener('click', function (e) {
+            if (e.target.closest('[data-reserve-close]')) closeReserveModal();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && document.getElementById('reserve-modal').classList.contains('is-open')) {
+                closeReserveModal();
+            }
+        });
+
+        document.getElementById('reserve-date-start').addEventListener('change', function () {
+            const endInput = document.getElementById('reserve-date-end');
+            if (!endInput) return;
+            endInput.min = this.value || getTodayISO();
+            if (endInput.value && endInput.value < endInput.min) endInput.value = endInput.min;
+        });
+
+        document.getElementById('reserve-modal-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const debut = document.getElementById('reserve-date-start').value;
+            const fin = document.getElementById('reserve-date-end').value;
+
+            if (!debut || !fin) return;
+            if (fin < debut) {
                 alert(t('alert.date_invalid'));
                 return;
             }
 
             openWhatsAppReservation({
-                carName: btn.dataset.carKey ? t(btn.dataset.carKey) : '',
-                pickupLocation: getPickupLocation(lieuKey),
+                carName: reserveModalCarKey ? t(reserveModalCarKey) : '',
                 startDate: debut,
                 endDate: fin
             });
+            closeReserveModal();
+        });
+
+        document.getElementById('fleet-grid').addEventListener('click', function (e) {
+            const btn = e.target.closest('.wa-reserve-btn');
+            if (!btn) return;
+            e.preventDefault();
+            openReserveModal(btn.dataset.carKey || '');
         });
 
         document.getElementById('booking-form').addEventListener('submit', function (e) {
