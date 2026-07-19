@@ -516,6 +516,45 @@
         }
         .glass-card:hover .car-img-wrap img { transform: scale(1.05); }
 
+        .fleet-spec-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.375rem;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(30, 41, 59, 0.8);
+        }
+        .fleet-spec-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            min-height: 1.75rem;
+            padding: 0.3125rem 0.5rem;
+            border-radius: 0.5rem;
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(51, 65, 85, 0.45);
+        }
+        .fleet-spec-badge__icon {
+            flex-shrink: 0;
+            width: 1rem;
+            text-align: center;
+            font-size: 0.6875rem;
+            line-height: 1;
+        }
+        .fleet-spec-badge__text {
+            flex: 1;
+            min-width: 0;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #cbd5e1;
+            letter-spacing: 0.01em;
+        }
+        .fleet-spec-badge--wide {
+            grid-column: 1 / -1;
+            justify-content: center;
+        }
+
         #mobile-menu { transition: max-height 0.3s ease, opacity 0.3s ease; }
 
         .stars { color: #f59e0b; letter-spacing: 0.05em; }
@@ -1672,12 +1711,12 @@
                 'fleet.price_unit': 'DH / jour',
                 'fleet.price_on_request': 'Sur demande',
                 'fleet.spec_on_request': 'Informations sur demande',
-                'fleet.spec_clio5': '• Manuelle<br>• Diesel<br>• 4 Portes<br>• Climatisation<br>• 5 Places',
-                'fleet.spec_sandero': '• Manuelle<br>• Diesel<br>• 4 Portes<br>• Climatisation<br>• 5 Places',
-                'fleet.spec_streetway': '• Automatique<br>• Diesel<br>• 4 Portes<br>• Climatisation<br>• 5 Places',
-                'fleet.spec_peugeot208': '• Manuelle<br>• Diesel<br>• 4 Portes<br>• Climatisation<br>• 5 Places',
-                'fleet.spec_opel_corsa': '• Manuelle<br>• Diesel<br>• 4 Portes<br>• Climatisation<br>• 5 Places',
-                'fleet.spec_skoda': '• Automatique<br>• Diesel<br>• 4 Portes<br>• Climatisation<br>• 5 Places',
+                'fleet.spec_label.manual': 'Manuelle',
+                'fleet.spec_label.automatic': 'Automatique',
+                'fleet.spec_label.fuel': 'Diesel',
+                'fleet.spec_label.doors': '4 Portes',
+                'fleet.spec_label.seats': '5 Places',
+                'fleet.spec_label.ac': 'Climatisation',
                 'fleet.spec_sandero2': '⚙️ Automatique',
                 'fleet.book': 'Réserver',
                 'fleet.car_clio5': 'Renault Clio 5',
@@ -1825,12 +1864,12 @@
                 'fleet.price_unit': 'DH / day',
                 'fleet.price_on_request': 'On request',
                 'fleet.spec_on_request': 'Information on request',
-                'fleet.spec_clio5': '• Manual<br>• Diesel<br>• 4 Doors<br>• Air conditioning<br>• 5 Seats',
-                'fleet.spec_sandero': '• Manual<br>• Diesel<br>• 4 Doors<br>• Air conditioning<br>• 5 Seats',
-                'fleet.spec_streetway': '• Automatic<br>• Diesel<br>• 4 Doors<br>• Air conditioning<br>• 5 Seats',
-                'fleet.spec_peugeot208': '• Manual<br>• Diesel<br>• 4 Doors<br>• Air conditioning<br>• 5 Seats',
-                'fleet.spec_opel_corsa': '• Manual<br>• Diesel<br>• 4 Doors<br>• Air conditioning<br>• 5 Seats',
-                'fleet.spec_skoda': '• Automatic<br>• Diesel<br>• 4 Doors<br>• Air conditioning<br>• 5 Seats',
+                'fleet.spec_label.manual': 'Manual',
+                'fleet.spec_label.automatic': 'Automatic',
+                'fleet.spec_label.fuel': 'Diesel',
+                'fleet.spec_label.doors': '4 Doors',
+                'fleet.spec_label.seats': '5 Seats',
+                'fleet.spec_label.ac': 'Air conditioning',
                 'fleet.spec_sandero2': '⚙️ Automatic',
                 'fleet.book': 'Book now',
                 'fleet.car_clio5': 'Renault Clio 5',
@@ -1978,12 +2017,12 @@
                 'fleet.price_unit': 'درهم / يوم',
                 'fleet.price_on_request': 'حسب الطلب',
                 'fleet.spec_on_request': 'المعلومات متوفرة عند الطلب',
-                'fleet.spec_clio5': '• يدوي<br>• ديزل<br>• 4 أبواب<br>• تكييف<br>• 5 مقاعد',
-                'fleet.spec_sandero': '• يدوي<br>• ديزل<br>• 4 أبواب<br>• تكييف<br>• 5 مقاعد',
-                'fleet.spec_streetway': '• أوتوماتيك<br>• ديزل<br>• 4 أبواب<br>• تكييف<br>• 5 مقاعد',
-                'fleet.spec_peugeot208': '• يدوي<br>• ديزل<br>• 4 أبواب<br>• تكييف<br>• 5 مقاعد',
-                'fleet.spec_opel_corsa': '• يدوي<br>• ديزل<br>• 4 أبواب<br>• تكييف<br>• 5 مقاعد',
-                'fleet.spec_skoda': '• أوتوماتيك<br>• ديزل<br>• 4 أبواب<br>• تكييف<br>• 5 مقاعد',
+                'fleet.spec_label.manual': 'يدوي',
+                'fleet.spec_label.automatic': 'أوتوماتيك',
+                'fleet.spec_label.fuel': 'ديزل',
+                'fleet.spec_label.doors': '4 أبواب',
+                'fleet.spec_label.seats': '5 مقاعد',
+                'fleet.spec_label.ac': 'تكييف',
                 'fleet.spec_sandero2': '⚙️ أوتوماتيك',
                 'fleet.book': 'احجز',
                 'fleet.car_clio5': 'Renault Clio 5',
@@ -2088,7 +2127,7 @@
         const FLEET = [
             {
                 carKey: 'fleet.car_clio5',
-                specKey: 'fleet.spec_clio5',
+                transmission: 'manual',
                 altKey: 'meta.alt.clio5',
                 image: 'images/Renault%20Clio%205.jpg',
                 badgeKey: 'fleet.popular',
@@ -2097,7 +2136,7 @@
             },
             {
                 carKey: 'fleet.car_sandero',
-                specKey: 'fleet.spec_sandero',
+                transmission: 'manual',
                 altKey: 'meta.alt.sandero',
                 image: 'images/Dacia%20Sandero.jpg',
                 badgeKey: 'fleet.economy',
@@ -2106,7 +2145,7 @@
             },
             {
                 carKey: 'fleet.car_streetway',
-                specKey: 'fleet.spec_streetway',
+                transmission: 'auto',
                 altKey: 'meta.alt.streetway',
                 image: 'images/Dacia%20Streetway.jpg',
                 badgeKey: 'fleet.economy',
@@ -2115,7 +2154,7 @@
             },
             {
                 carKey: 'fleet.car_peugeot208',
-                specKey: 'fleet.spec_peugeot208',
+                transmission: 'manual',
                 altKey: 'meta.alt.peugeot208',
                 image: 'images/Peugeot%20208%20Style.jpg',
                 badgeKey: 'fleet.popular',
@@ -2124,7 +2163,7 @@
             },
             {
                 carKey: 'fleet.car_opel_corsa',
-                specKey: 'fleet.spec_opel_corsa',
+                transmission: 'manual',
                 altKey: 'meta.alt.opel_corsa',
                 image: 'images/Opel%20Corsa.jpg',
                 badgeKey: 'fleet.popular',
@@ -2133,7 +2172,7 @@
             },
             {
                 carKey: 'fleet.car_skoda',
-                specKey: 'fleet.spec_skoda',
+                transmission: 'auto',
                 altKey: 'meta.alt.skoda',
                 image: 'images/Skoda.jpg',
                 badgeKey: 'fleet.suv',
@@ -2141,6 +2180,31 @@
                 colSpan: ''
             }
         ];
+
+        function renderFleetSpecGrid(transmission) {
+            const transmissionKey = transmission === 'auto' ? 'fleet.spec_label.automatic' : 'fleet.spec_label.manual';
+            const items = [
+                { icon: '⚙️', key: transmissionKey },
+                { icon: '⛽', key: 'fleet.spec_label.fuel' },
+                { icon: '🚪', key: 'fleet.spec_label.doors' },
+                { icon: '👥', key: 'fleet.spec_label.seats' },
+                { icon: '❄️', key: 'fleet.spec_label.ac', wide: true }
+            ];
+
+            return (
+                '<div class="fleet-spec-grid">' +
+                    items.map(function (item) {
+                        const wideClass = item.wide ? ' fleet-spec-badge--wide' : '';
+                        return (
+                            '<div class="fleet-spec-badge' + wideClass + '">' +
+                                '<span class="fleet-spec-badge__icon" aria-hidden="true">' + item.icon + '</span>' +
+                                '<span class="fleet-spec-badge__text" data-i18n="' + item.key + '"></span>' +
+                            '</div>'
+                        );
+                    }).join('') +
+                '</div>'
+            );
+        }
 
         const WA_RESERVE_ICON = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.92.92l4.458-1.495A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.79 9.79 0 01-4.99-1.364l-.357-.212-2.645.887.887-2.58-.233-.374A9.818 9.818 0 1121.818 12 9.83 9.83 0 0112 21.818z"/></svg>';
 
@@ -2165,7 +2229,7 @@
                                     '<p class="text-2xl font-black text-amber-500" data-i18n="fleet.price_on_request"></p>' +
                                 '</div>' +
                             '</div>' +
-                            '<p class="text-slate-400 text-xs mt-5 pt-5 border-t border-slate-800/80 text-center leading-relaxed" data-i18n-html="' + car.specKey + '"></p>' +
+                            renderFleetSpecGrid(car.transmission) +
                             '<a href="#" class="wa-btn wa-reserve-btn flex items-center justify-center gap-2 text-white font-bold py-3 rounded-xl mt-5 text-sm" data-car-key="' + car.carKey + '">' +
                                 WA_RESERVE_ICON +
                                 '<span data-i18n="fleet.book"></span>' +
