@@ -1321,36 +1321,23 @@
 
                     <form id="booking-form" class="space-y-4 max-md:space-y-3">
                         <div>
-                            <label for="ville" class="booking-field-label" data-i18n="form.city">Ville</label>
+                            <label for="lieu" class="booking-field-label" data-i18n="form.location">Lieu de prise en charge</label>
                             <div class="booking-field booking-field--select">
                                 <svg class="booking-field-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                                <select id="ville" name="ville" required data-i18n-aria="form.city" aria-label="Ville">
-                                    <option value="fes" data-i18n="opt.city_fes">Fès</option>
-                                    <option value="casablanca" data-i18n="opt.city_casablanca">Casablanca</option>
-                                    <option value="rabat" data-i18n="opt.city_rabat">Rabat</option>
-                                    <option value="marrakech" data-i18n="opt.city_marrakech">Marrakech</option>
-                                    <option value="tanger" data-i18n="opt.city_tanger">Tanger</option>
-                                    <option value="agadir" data-i18n="opt.city_agadir">Agadir</option>
-                                    <option value="meknes" data-i18n="opt.city_meknes">Meknès</option>
-                                    <option value="oujda" data-i18n="opt.city_oujda">Oujda</option>
-                                    <option value="nador" data-i18n="opt.city_nador">Nador</option>
-                                    <option value="tetouan" data-i18n="opt.city_tetouan">Tétouan</option>
-                                    <option value="el_jadida" data-i18n="opt.city_el_jadida">El Jadida</option>
-                                    <option value="essaouira" data-i18n="opt.city_essaouira">Essaouira</option>
-                                </select>
-                                <svg class="booking-field-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="lieu-livraison" class="booking-field-label" data-i18n="form.delivery_place">Lieu de livraison</label>
-                            <div class="booking-field booking-field--select">
-                                <svg class="booking-field-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                                <select id="lieu-livraison" name="lieu-livraison" required data-i18n-aria="form.delivery_place" aria-label="Lieu de livraison">
-                                    <option value="airport" data-i18n="opt.place_airport">Aéroport</option>
-                                    <option value="hotel" data-i18n="opt.place_hotel">Hôtel</option>
-                                    <option value="gare" data-i18n="opt.place_gare">Gare</option>
-                                    <option value="centre" data-i18n="opt.place_centre">Centre-ville</option>
-                                    <option value="address" data-i18n="opt.place_address">Adresse de votre choix</option>
+                                <select id="lieu" name="lieu" required data-i18n-aria="form.location" aria-label="Lieu de prise en charge">
+                                    <option value="fes_centre" data-i18n="opt.pickup_fes_centre">Fès – Centre-ville</option>
+                                    <option value="fes_airport" data-i18n="opt.pickup_fes_airport">Fès – Aéroport Saïss</option>
+                                    <option value="casa_centre" data-i18n="opt.pickup_casa_centre">Casablanca – Centre-ville</option>
+                                    <option value="casa_airport" data-i18n="opt.pickup_casa_airport">Casablanca – Aéroport Mohammed V</option>
+                                    <option value="rabat_centre" data-i18n="opt.pickup_rabat_centre">Rabat – Centre-ville</option>
+                                    <option value="rabat_airport" data-i18n="opt.pickup_rabat_airport">Rabat – Aéroport Rabat-Salé</option>
+                                    <option value="marrakech_centre" data-i18n="opt.pickup_marrakech_centre">Marrakech – Centre-ville</option>
+                                    <option value="marrakech_airport" data-i18n="opt.pickup_marrakech_airport">Marrakech – Aéroport Menara</option>
+                                    <option value="tanger_centre" data-i18n="opt.pickup_tanger_centre">Tanger – Centre-ville</option>
+                                    <option value="tanger_airport" data-i18n="opt.pickup_tanger_airport">Tanger – Aéroport Ibn Battouta</option>
+                                    <option value="agadir_centre" data-i18n="opt.pickup_agadir_centre">Agadir – Centre-ville</option>
+                                    <option value="agadir_airport" data-i18n="opt.pickup_agadir_airport">Agadir – Aéroport Al Massira</option>
+                                    <option value="other_morocco" data-i18n="opt.pickup_other_morocco">Autre lieu au Maroc (nous contacter sur WhatsApp)</option>
                                 </select>
                                 <svg class="booking-field-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                             </div>
@@ -1375,6 +1362,10 @@
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                             <span data-i18n="form.search">Voir les disponibilités</span>
                         </button>
+                        <p class="text-emerald-400/90 text-xs text-center mt-3 flex items-center justify-center gap-1.5 leading-snug">
+                            <span class="text-emerald-400 shrink-0" aria-hidden="true">✓</span>
+                            <span data-i18n="form.delivery_trust">Livraison disponible partout au Maroc.</span>
+                        </p>
                     </form>
                     <p class="text-slate-500 text-xs text-center mt-5 flex items-center justify-center gap-1.5 max-md:hidden">
                         <svg class="w-3.5 h-3.5 shrink-0 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
@@ -1828,29 +1819,24 @@
                 'form.title': 'Réservez votre véhicule',
                 'form.subtitle': 'Disponibilité confirmée en quelques minutes',
                 'form.location': 'Lieu de prise en charge',
-                'form.city': 'Ville',
-                'form.delivery_place': 'Lieu de livraison',
                 'form.date_start': 'Date de début',
                 'form.date_end': 'Date de fin',
                 'form.search': 'Voir les disponibilités',
                 'form.confirm': 'Confirmation instantanée et sécurisée',
-                'opt.city_fes': 'Fès',
-                'opt.city_casablanca': 'Casablanca',
-                'opt.city_rabat': 'Rabat',
-                'opt.city_marrakech': 'Marrakech',
-                'opt.city_tanger': 'Tanger',
-                'opt.city_agadir': 'Agadir',
-                'opt.city_meknes': 'Meknès',
-                'opt.city_oujda': 'Oujda',
-                'opt.city_nador': 'Nador',
-                'opt.city_tetouan': 'Tétouan',
-                'opt.city_el_jadida': 'El Jadida',
-                'opt.city_essaouira': 'Essaouira',
-                'opt.place_airport': 'Aéroport',
-                'opt.place_hotel': 'Hôtel',
-                'opt.place_gare': 'Gare',
-                'opt.place_centre': 'Centre-ville',
-                'opt.place_address': 'Adresse de votre choix',
+                'form.delivery_trust': 'Livraison disponible partout au Maroc.',
+                'opt.pickup_fes_centre': 'Fès – Centre-ville',
+                'opt.pickup_fes_airport': 'Fès – Aéroport Saïss',
+                'opt.pickup_casa_centre': 'Casablanca – Centre-ville',
+                'opt.pickup_casa_airport': 'Casablanca – Aéroport Mohammed V',
+                'opt.pickup_rabat_centre': 'Rabat – Centre-ville',
+                'opt.pickup_rabat_airport': 'Rabat – Aéroport Rabat-Salé',
+                'opt.pickup_marrakech_centre': 'Marrakech – Centre-ville',
+                'opt.pickup_marrakech_airport': 'Marrakech – Aéroport Menara',
+                'opt.pickup_tanger_centre': 'Tanger – Centre-ville',
+                'opt.pickup_tanger_airport': 'Tanger – Aéroport Ibn Battouta',
+                'opt.pickup_agadir_centre': 'Agadir – Centre-ville',
+                'opt.pickup_agadir_airport': 'Agadir – Aéroport Al Massira',
+                'opt.pickup_other_morocco': 'Autre lieu au Maroc (nous contacter sur WhatsApp)',
                 'fleet.eyebrow': 'Notre flotte',
                 'fleet.title': 'Véhicules disponibles',
                 'fleet.desc': 'Entretenus avec soin, prêts pour vos routes marocaines',
@@ -2004,29 +1990,24 @@
                 'form.title': 'Book your vehicle',
                 'form.subtitle': 'Availability confirmed within minutes',
                 'form.location': 'Pick-up location',
-                'form.city': 'City',
-                'form.delivery_place': 'Delivery location',
                 'form.date_start': 'Start date',
                 'form.date_end': 'End date',
                 'form.search': 'View availability',
                 'form.confirm': 'Instant secure confirmation',
-                'opt.city_fes': 'Fez',
-                'opt.city_casablanca': 'Casablanca',
-                'opt.city_rabat': 'Rabat',
-                'opt.city_marrakech': 'Marrakech',
-                'opt.city_tanger': 'Tangier',
-                'opt.city_agadir': 'Agadir',
-                'opt.city_meknes': 'Meknes',
-                'opt.city_oujda': 'Oujda',
-                'opt.city_nador': 'Nador',
-                'opt.city_tetouan': 'Tetouan',
-                'opt.city_el_jadida': 'El Jadida',
-                'opt.city_essaouira': 'Essaouira',
-                'opt.place_airport': 'Airport',
-                'opt.place_hotel': 'Hotel',
-                'opt.place_gare': 'Train station',
-                'opt.place_centre': 'City centre',
-                'opt.place_address': 'Address of your choice',
+                'form.delivery_trust': 'Delivery available anywhere in Morocco.',
+                'opt.pickup_fes_centre': 'Fez – City centre',
+                'opt.pickup_fes_airport': 'Fez – Saiss Airport',
+                'opt.pickup_casa_centre': 'Casablanca – City centre',
+                'opt.pickup_casa_airport': 'Casablanca – Mohammed V Airport',
+                'opt.pickup_rabat_centre': 'Rabat – City centre',
+                'opt.pickup_rabat_airport': 'Rabat – Rabat-Salé Airport',
+                'opt.pickup_marrakech_centre': 'Marrakech – City centre',
+                'opt.pickup_marrakech_airport': 'Marrakech – Menara Airport',
+                'opt.pickup_tanger_centre': 'Tangier – City centre',
+                'opt.pickup_tanger_airport': 'Tangier – Ibn Battouta Airport',
+                'opt.pickup_agadir_centre': 'Agadir – City centre',
+                'opt.pickup_agadir_airport': 'Agadir – Al Massira Airport',
+                'opt.pickup_other_morocco': 'Other location in Morocco (contact us on WhatsApp)',
                 'fleet.eyebrow': 'Our fleet',
                 'fleet.title': 'Available vehicles',
                 'fleet.desc': 'Meticulously maintained, ready for Moroccan roads',
@@ -2180,29 +2161,24 @@
                 'form.title': 'احجز سيارتك',
                 'form.subtitle': 'تأكيد التوفر خلال دقائق',
                 'form.location': 'مكان الاستلام',
-                'form.city': 'المدينة',
-                'form.delivery_place': 'مكان التسليم',
                 'form.date_start': 'تاريخ البداية',
                 'form.date_end': 'تاريخ النهاية',
                 'form.search': 'عرض التوفر',
                 'form.confirm': 'تأكيد فوري وآمن',
-                'opt.city_fes': 'فاس',
-                'opt.city_casablanca': 'الدار البيضاء',
-                'opt.city_rabat': 'الرباط',
-                'opt.city_marrakech': 'مراكش',
-                'opt.city_tanger': 'طنجة',
-                'opt.city_agadir': 'أكادير',
-                'opt.city_meknes': 'مكناس',
-                'opt.city_oujda': 'وجدة',
-                'opt.city_nador': 'الناظور',
-                'opt.city_tetouan': 'تطوان',
-                'opt.city_el_jadida': 'الجديدة',
-                'opt.city_essaouira': 'الصويرة',
-                'opt.place_airport': 'المطار',
-                'opt.place_hotel': 'الفندق',
-                'opt.place_gare': 'المحطة',
-                'opt.place_centre': 'وسط المدينة',
-                'opt.place_address': 'العنوان الذي تختاره',
+                'form.delivery_trust': 'التوصيل متاح في جميع أنحاء المغرب.',
+                'opt.pickup_fes_centre': 'فاس – وسط المدينة',
+                'opt.pickup_fes_airport': 'فاس – مطار سايس',
+                'opt.pickup_casa_centre': 'الدار البيضاء – وسط المدينة',
+                'opt.pickup_casa_airport': 'الدار البيضاء – مطار محمد الخامس',
+                'opt.pickup_rabat_centre': 'الرباط – وسط المدينة',
+                'opt.pickup_rabat_airport': 'الرباط – مطار الرباط-سلا',
+                'opt.pickup_marrakech_centre': 'مراكش – وسط المدينة',
+                'opt.pickup_marrakech_airport': 'مراكش – مطار المنارة',
+                'opt.pickup_tanger_centre': 'طنجة – وسط المدينة',
+                'opt.pickup_tanger_airport': 'طنجة – مطار ابن بطوطة',
+                'opt.pickup_agadir_centre': 'أكادير – وسط المدينة',
+                'opt.pickup_agadir_airport': 'أكادير – مطار المسيرة',
+                'opt.pickup_other_morocco': 'مكان آخر في المغرب (تواصل معنا عبر واتساب)',
                 'fleet.eyebrow': 'أسطولنا',
                 'fleet.title': 'السيارات المتاحة',
                 'fleet.desc': 'صيانة دقيقة، جاهزة لطرق المغرب',
@@ -2629,11 +2605,9 @@
             return new Date(d + 'T00:00:00').toLocaleDateString(locales[currentLang] || 'fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
         }
 
-        function getPickupLocation(cityKey, placeKey) {
-            const parts = [];
-            if (cityKey) parts.push(t('opt.city_' + cityKey));
-            if (placeKey) parts.push(t('opt.place_' + placeKey));
-            return parts.join(' — ');
+        function getPickupLocation(lieuKey) {
+            if (!lieuKey) return '';
+            return t('opt.pickup_' + lieuKey);
         }
 
         function getRentalDays(debut, fin) {
@@ -2772,8 +2746,7 @@
 
         document.getElementById('booking-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            const cityKey = document.getElementById('ville').value;
-            const placeKey = document.getElementById('lieu-livraison').value;
+            const lieuKey = document.getElementById('lieu').value;
             const debut = document.getElementById('date-debut').value;
             const fin = document.getElementById('date-fin').value;
 
@@ -2784,7 +2757,7 @@
 
             openWhatsAppReservation({
                 carName: '',
-                pickupLocation: getPickupLocation(cityKey, placeKey),
+                pickupLocation: getPickupLocation(lieuKey),
                 startDate: debut,
                 endDate: fin
             });
