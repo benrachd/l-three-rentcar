@@ -1,13 +1,17 @@
 {
+  "id": "https://lthreerentcar.com/",
   "name": "L.THREE RENTCAR",
   "short_name": "L3 Rentcar",
   "description": "Location de voitures premium à Fès, Maroc — L.THREE RENTCAR",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "https://lthreerentcar.com/",
+  "scope": "https://lthreerentcar.com/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#020617",
   "theme_color": "#020617",
   "lang": "fr",
+  "dir": "ltr",
+  "categories": ["travel", "business"],
   "icons": [
     {
       "src": "images/logo.png",
@@ -20,6 +24,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

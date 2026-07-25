@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /public/admin/
+Disallow: /static/admin/
 
-Sitemap: https://benrachd.github.io/l-three-rentcar/sitemap.xml
+Sitemap: https://lthreerentcar.com/sitemap.xml
